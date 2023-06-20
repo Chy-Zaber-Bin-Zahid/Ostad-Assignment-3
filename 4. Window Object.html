@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="windowNew('https://www.example.com', 800, 600)">Click</button>
+  <script>
+    function windowNew(u, w, h) {
+      window.open(u, `width=${w},height=${h}`);
+  }
+  </script>
+</body>
+</html>

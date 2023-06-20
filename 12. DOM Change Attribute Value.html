@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body">
+  <img id="myImage" src='https://cdn.rabbil.com/photos/images/2022/11/04/rabbilVai.png' width="300px" alt="Image">
+  <button id="myButton">Change Image</button>
+  <script>
+      const imageElement = document.getElementById('myImage');
+      const buttonElement = document.getElementById('myButton');
+      buttonElement.addEventListener('click', function() {
+        imageElement.src = 'https://cdn.rabbil.com/photos/images/2022/11/05/Mask-Group-22.png';
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img id="myImage" src="https://cdn.rabbil.com/photos/images/2022/11/04/rabbilVai.png" width="300px" alt="image">
+  <script>
+      //a
+      document.addEventListener('click', function(event) {
+        const x = event.clientX;
+        const y = event.clientY;
+        alert(`Clicked at coordinates (x, y): ${x}, ${y}`);
+      });
+      //b
+      document.addEventListener('keydown', function(event) {
+        const keyCode = event.keyCode || event.which;
+        alert('Key code: ' + keyCode);
+      });
+      //c
+      const imageElement = document.getElementById('myImage');
+      imageElement.addEventListener('mouseenter', function() {
+        imageElement.src = 'https://cdn.rabbil.com/photos/images/2022/11/05/Mask-Group-22.png';
+      });
+      imageElement.addEventListener('mouseleave', function() {
+        imageElement.src = 'https://cdn.rabbil.com/photos/images/2022/11/04/rabbilVai.png';
+      });
+  </script>
+</body>
+</html>

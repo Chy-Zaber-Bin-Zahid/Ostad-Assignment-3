@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .highlight {
+      color: black;
+    }
+  </style>
+</head>
+<body">
+    <p id="1" class="highlight">Paragraph 1</p>
+    <p id="2" class="highlight-2">Paragraph 2</p>
+    <p id="3" class="highlight">Paragraph 3</p>
+    <p id="4" class="highlight-2">Paragraph 4</p>
+    <p id="5" class="highlight">Paragraph 5</p>
+    <button id="myButton">Click</button>
+  <script>
+      const highlightedParagraphs = document.querySelectorAll('.highlight');
+      const buttonElement = document.getElementById('myButton');
+      buttonElement.addEventListener('click', function() {
+        highlightedParagraphs.forEach(function(paragraph) {
+        paragraph.style.color = 'red';
+      });
+    });
+     
+  </script>
+</body>
+</html>

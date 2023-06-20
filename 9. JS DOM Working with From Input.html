@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="justify-content: center; align-items: center; display: flex;">
+  <form style="display: flex; flex-direction: column; max-width: 30rem;  border: 1px solid rgb(146, 146, 146);" id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" id="confirmPassword" required>
+
+
+    <button type="submit">Submit</button>
+  </form>
+
+
+  <div id="errorMessages"></div>
+  <script>
+      const form = document.getElementById('myForm');
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const confirmPasswordInput = document.getElementById('confirmPassword');
+      const errorMessages = document.getElementById('errorMessages');
+
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+
+        errorMessages.innerHTML = '';
+
+
+          const name = nameInput.value.trim();
+          const email = emailInput.value.trim();
+          const password = passwordInput.value.trim();
+          const confirmPassword = confirmPasswordInput.value.trim();
+
+
+          if (!isValidName(name)) {
+            displayErrorMessage('Name should not be empty and should contain only letters.');
+          }
+
+
+          if (!isValidEmail(email)) {
+            displayErrorMessage('Email should be a valid email address.');
+          }
+
+
+          if (!isValidPassword(password)) {
+            displayErrorMessage('Password should have a minimum length of 8 characters and contain at least one uppercase letter, one lowercase letter, and one digit.');
+          }
+
+
+          if (password !== confirmPassword) {
+            displayErrorMessage('Confirm Password should match the Password field.');
+          }
+
+
+          if (errorMessages.childElementCount === 0) {
+            console.log('Form submitted successfully!');
+            form.reset();
+          }
+        });
+
+
+
+
+        function isValidName(name) {
+          return /^[a-zA-Z]+$/.test(name);
+        }
+
+
+
+
+        function isValidEmail(email) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+
+
+
+        function isValidPassword(password) {
+          const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+          return regex.test(password);
+        }
+
+
+        function displayErrorMessage(message) {
+          const errorMessage = document.createElement('p');
+          errorMessage.textContent = message;
+          errorMessages.appendChild(errorMessage);
+        }
+  </script>
+</body>
+</html>

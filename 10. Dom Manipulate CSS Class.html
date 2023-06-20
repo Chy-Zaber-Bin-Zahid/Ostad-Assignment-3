@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body">
+  <button id="myButton">Click me</button>
+  <p id="myParagraph">Some text here</p>
+  <script>
+      const buttonElement = document.getElementById('myButton');
+      const paragraphElement = document.getElementById('myParagraph');
+      buttonElement.addEventListener('click', function() {
+        paragraphElement.classList.add('highlight');
+      });
+  </script>
+</body>
+</html>

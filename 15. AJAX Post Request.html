@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+
+  </style>
+</head>
+<body">
+    <button onclick="post()">Post</button>
+  <script>
+      function post(){
+        let URL = 'https://api.example.com/submit';
+        let BodyData = {name: "John Doe", email: "johndoe@example.com"}
+        let config = {method: 'POST', headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},body:JSON.stringify(BodyData)};
+
+
+        fetch(URL, config)
+        .then(response=>response.json())
+        .ten(result=>console.log(result))
+        .catch(err=>console.log(err));
+      }
+     
+  </script>
+</body>
+</html>

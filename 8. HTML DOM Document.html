@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="myButton">Click me</button>
+  <p id="myParagraph">Hello Ostad!</p>
+  <script>
+      const buttonElement = document.getElementById('myButton');
+      const paragraphElement = document.getElementById('myParagraph');
+      buttonElement.addEventListener('click', function() {
+        paragraphElement.textContent = 'Button Clicked!';
+      });
+  </script>
+</body>
+</html>

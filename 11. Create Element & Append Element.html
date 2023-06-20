@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body">
+  <ul id="myList"></ul>
+  <button onclick="createListItems();">Click</button>
+  <script>
+      const listElement = document.getElementById('myList');
+      function createListItems() {
+        for (let i = 1; i <= 5; i++) {
+          const listItem = document.createElement('li');
+          listItem.textContent = i;
+          listElement.appendChild(listItem);
+        }
+      }
+  </script>
+</body>
+</html>
